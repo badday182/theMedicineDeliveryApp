@@ -5,6 +5,7 @@ import HeaderNavbar from "./components/headerNavbar/HeaderNavbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Store from "./components/store/Store";
 import Home from "./components/home/Home";
+import CartCards from "./components/cartCards/CartCards";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/store" element={<Store />} />
+            <Route path="/cart_Cards" element={<CartCards />} />
             {/* <main className="my-2">
               <Store />
             </main>

@@ -9,7 +9,7 @@ const HeaderNavbar = () => {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/store">Shop</Nav.Link>
-            <Nav.Link href="/shoppingCart">Shopping Cart</Nav.Link>
+            <Nav.Link href="/cart_Cards">Shopping Cart</Nav.Link>
           </Nav>
          </Container>
        

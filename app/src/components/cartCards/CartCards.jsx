@@ -3,32 +3,36 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import cardsData from "../cardsData/cardsData";
-import { useDispatch } from "react-redux";
-import { addToMedicinesArray } from "../../redux/slices/cartSliseReducer";
+import { useSelector } from "react-redux";
 
-const Cards = () => {
-    const dispatch = useDispatch()
+const CartCards = () => {
+  const cartMedicinesArray = useSelector(
+    (state) => state.cart.medicinesArray
+  )
 
-    const cardButtonOnClick = (title)=> {
-        console.log(title)
-        dispatch(addToMedicinesArray(title))
-    }
-    return (
+  console.log(cartMedicinesArray);
+
+    // const cardButtonOnClick = (title)=> {
+
+    // }
+       return (
    
+<div className="my-2 p-2 border border-primary-subtle rounded-2">
 
-    <Row xs={1} md={2} lg={3} className="g-3">
+    <Row xs={2} md={4} className="g-3">
       {cardsData.map((card, idx) => (
         <Col key={idx}>
           <Card>
             <Card.Img variant="top" src={card.imageUrl}/>
             <Card.Body >
               <Card.Title>{card.title}</Card.Title>
-              <Button variant="primary" onClick={()=>{cardButtonOnClick(card.title)}}>Add to Cart</Button>
+              <Button variant="primary">Add to Cart</Button>
             </Card.Body>
           </Card>
         </Col>
       ))}
   </Row>
+</div>
     )
 }
-export default Cards
+export default CartCards
