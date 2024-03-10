@@ -10,21 +10,22 @@ import CartCards from "./components/cartCards/CartCards";
 function App() {
   return (
     <>
-      <Container>
+      <Container className="d-flex flex-column vh-100">
         <BrowserRouter>
-            <header>
-              <HeaderNavbar />
-            </header>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/store" element={<Store />} />
-            <Route path="/cart_cards" element={<CartCards />} />
-            {/* <main className="my-2">
-              <Store />
-            </main>
-            <footer></footer> */}
-          </Routes>
+          <header>
+            <HeaderNavbar />
+          </header>
+          <main className="flex-grow-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/store" element={<Store />} />
+              <Route path="/cart_cards" element={<CartCards />} />
+            </Routes>
+          </main>
         </BrowserRouter>
+        <footer className="mb-1 p-2 text-center border border-primary-subtle rounded-2">
+          Created by Valerii Berkun
+        </footer>
       </Container>
     </>
   );
