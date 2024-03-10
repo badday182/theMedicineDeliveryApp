@@ -9,18 +9,20 @@ export const cartSliseReducer = createSlice({
   initialState,
   reducers: {
     addToMedicinesArray: (state, action) => {
-      // const { title } = action.payload;
-      // state.medicinesArray.push(title);
-      state.medicinesArray.push(action.payload);
+      const titleToAdd = action.payload;
+      // title chacking
+      if (!state.medicinesArray.includes(titleToAdd)) {
+        state.medicinesArray.push(titleToAdd);
+      }
     },
-    resetCherepSliseReducer: (state) => {
-      state.cherepNormaNenormaText = "";
-      state.cherepNormaNenormaArray = [];
+    resetMedicinesArray: (state) => {
+      state.medicinesArray = [];
     },
   },
 });
 
-export const { addToMedicinesArray, resetCherepSliseReducer } =
+
+export const { addToMedicinesArray, resetMedicinesArray } =
   cartSliseReducer.actions;
 
 export default cartSliseReducer.reducer;

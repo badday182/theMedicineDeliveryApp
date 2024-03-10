@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/store" element={<Store />} />
-            <Route path="/cart_Cards" element={<CartCards />} />
+            <Route path="/cart_cards" element={<CartCards />} />
             {/* <main className="my-2">
               <Store />
             </main>

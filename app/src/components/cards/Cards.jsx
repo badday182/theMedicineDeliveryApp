@@ -10,7 +10,7 @@ const Cards = () => {
     const dispatch = useDispatch()
 
     const cardButtonOnClick = (title)=> {
-        console.log(title)
+        // console.log(title)
         dispatch(addToMedicinesArray(title))
     }
     return (
