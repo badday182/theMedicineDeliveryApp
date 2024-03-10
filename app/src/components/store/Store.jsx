@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SideNavSection = () => {
+const Store = () => {
     const pharmacies = ['Drugs 24', 'Pharmacy', 'Pharmacy 911', 'Low Price Pharmacy'];
     const [activeButton, setActiveButton] = useState(pharmacies[0]);
     
@@ -9,7 +9,7 @@ const SideNavSection = () => {
     };
 
     return (
-        <div className="d-flex align-items-start">
+        <div className="d-flex align-items-start my-2 p-2 border border-primary-subtle rounded-2">
            {/* pharmacies Nav  */}
             <div
                 className="nav flex-column nav-pills me-3"
@@ -51,4 +51,4 @@ const SideNavSection = () => {
     );
 };
 
-export default SideNavSection;
+export default Store;

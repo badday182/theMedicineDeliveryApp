@@ -1,15 +1,18 @@
-import { Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 const HeaderNavbar = () => {
   return (
     
-      <Navbar bg="light" data-bs-theme="light">
-        <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar className='my-2 rounded-2' expand="sm" bg="light" data-bs-theme="light">
+         <Container>
+
           <Nav className="me-auto">
-            <Nav.Link href="#shop">Shop</Nav.Link>
-            <Nav.Link href="#shoppingCart">Shopping Cart</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/store">Shop</Nav.Link>
+            <Nav.Link href="/shoppingCart">Shopping Cart</Nav.Link>
           </Nav>
-        </Navbar.Collapse>
+         </Container>
+       
       </Navbar>
    
   );

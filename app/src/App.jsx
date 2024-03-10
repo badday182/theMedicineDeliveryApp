@@ -2,18 +2,27 @@ import "./App.css";
 import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HeaderNavbar from "./components/headerNavbar/HeaderNavbar";
-import SideNavSection from "./components/sideNavSection/SideNavSection";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Store from "./components/store/Store";
+import Home from "./components/home/Home";
+
 function App() {
   return (
     <>
       <Container>
-        <header>
-          <HeaderNavbar />
-        </header>
-        <main className="my-2">
-          <SideNavSection />
-        </main>
-        <footer></footer>
+        <BrowserRouter>
+            <header>
+              <HeaderNavbar />
+            </header>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/store" element={<Store />} />
+            {/* <main className="my-2">
+              <Store />
+            </main>
+            <footer></footer> */}
+          </Routes>
+        </BrowserRouter>
       </Container>
     </>
   );
