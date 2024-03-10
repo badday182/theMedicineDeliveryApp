@@ -5,12 +5,13 @@ const HeaderNavbar = () => {
     
       <Navbar className='my-2 rounded-2' expand="sm" bg="light" data-bs-theme="light">
          <Container>
-
+      
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/store">Shop</Nav.Link>
             <Nav.Link href="/cart_cards">Shopping Cart</Nav.Link>
           </Nav>
+         
          </Container>
        
       </Navbar>

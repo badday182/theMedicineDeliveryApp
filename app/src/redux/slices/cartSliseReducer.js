@@ -15,6 +15,10 @@ export const cartSliseReducer = createSlice({
         state.medicinesArray.push(titleToAdd);
       }
     },
+    removeFromMedicinesArray: (state, action) => {
+      const titleToRemove = action.payload;
+      state.medicinesArray = state.medicinesArray.filter(item => item !== titleToRemove);
+  },
     resetMedicinesArray: (state) => {
       state.medicinesArray = [];
     },
@@ -22,7 +26,7 @@ export const cartSliseReducer = createSlice({
 });
 
 
-export const { addToMedicinesArray, resetMedicinesArray } =
+export const { addToMedicinesArray, resetMedicinesArray, removeFromMedicinesArray } =
   cartSliseReducer.actions;
 
 export default cartSliseReducer.reducer;

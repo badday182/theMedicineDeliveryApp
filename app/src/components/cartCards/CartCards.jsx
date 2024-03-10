@@ -54,7 +54,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { resetMedicinesArray } from "../../redux/slices/cartSliseReducer";
+import { removeFromMedicinesArray, resetMedicinesArray } from "../../redux/slices/cartSliseReducer";
 import cardsData from "../cardsData/cardsData";
 
 const CartCards = () => {
@@ -65,6 +65,11 @@ const CartCards = () => {
   const cartCardsData = cardsData.filter((card) =>
     cartMedicinesArray.includes(card.title)
   );
+
+  const cardButtonOnClick = (title)=> {
+    // console.log(title)
+    dispatch(removeFromMedicinesArray(title))
+}
 
   return (
     <div className="my-2 p-2 border border-primary-subtle rounded-2">
@@ -80,7 +85,7 @@ const CartCards = () => {
                     <Form.Control type="number" id="inputPassword5" defaultValue={1}/>
                   </div>
                 </div>
-                <Button variant="danger" >Remove</Button>
+                <Button variant="danger" onClick={()=>{cardButtonOnClick(card.title)}}>Remove</Button>
               </Card.Body>
             </Card>
           </Col>
