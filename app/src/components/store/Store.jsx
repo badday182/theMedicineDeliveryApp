@@ -16,7 +16,6 @@ const Store = () => {
 
   return (
     <div className="d-flex align-items-start my-2 p-2 border border-primary-subtle rounded-2">
-      {/* pharmacies Nav  */}
       <div
         className="nav flex-column nav-pills me-3 store_navbar"
         id="v-pills-tab"

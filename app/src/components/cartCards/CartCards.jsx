@@ -77,7 +77,12 @@ const CartCards = () => {
               <Form.Control placeholder="1234 Main St" />
             </Form.Group>
           </Row>
-          <Button className="mb-3" variant="primary" type="submit">
+          <Button
+            className="mb-3"
+            variant="primary"
+            type="submit"
+            disabled={cartMedicinesArray.length === 0}
+          >
             Submit
           </Button>
         </Form>
@@ -88,6 +93,7 @@ const CartCards = () => {
           onClick={() => {
             dispatch(resetMedicinesArray());
           }}
+          disabled={cartMedicinesArray.length === 0}
         >
           Clear Cart
         </Button>
