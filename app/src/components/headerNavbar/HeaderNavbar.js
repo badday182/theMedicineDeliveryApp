@@ -1,21 +1,20 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import Nav from 'react-bootstrap/Nav';
+import { NavLink } from 'react-router-dom';
 
-const HeaderNavbar = () => {
+function HeaderNavbar() {
   return (
-    
-      <Navbar className='my-2 rounded-2' expand="sm" bg="light" data-bs-theme="light">
-         <Container>
-      
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/store">Shop</Nav.Link>
-            <Nav.Link href="/cart_cards">Shopping Cart</Nav.Link>
-          </Nav>
-         
-         </Container>
-       
-      </Navbar>
-   
+    <Nav variant="pills" defaultActiveKey="/home" className="my-2 p-2 rounded-2 border border-primary-subtle rounded-2" as="ul">
+      <Nav.Item as="li">
+        <NavLink to="/" className="nav-link" activeClassName="active">Home</NavLink>
+      </Nav.Item>
+      <Nav.Item as="li">
+        <NavLink to="/store" className="nav-link" activeClassName="active">Shop</NavLink>
+      </Nav.Item>
+      <Nav.Item as="li">
+        <NavLink to="/cart_cards" className="nav-link" activeClassName="active">Shopping Cart</NavLink>
+      </Nav.Item>
+    </Nav>
   );
-};
-export default HeaderNavbar
+}
+
+export default HeaderNavbar;
