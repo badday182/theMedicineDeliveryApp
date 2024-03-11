@@ -1,7 +1,7 @@
 # the Project has a Server and User part
 
 User part - React.js and Server part - Express.js.\
-User part - app/frontend and Server part - app/backend.
+User part - /app/frontend and Server part - /app.
 
 ## Scripts to run User part
 
