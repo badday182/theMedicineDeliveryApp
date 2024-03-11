@@ -2,7 +2,6 @@ import { Card } from "react-bootstrap";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-// import cardsData from "../cardsData/cardsData";
 import { useDispatch } from "react-redux";
 import { addToMedicinesArray } from "../../redux/slices/cartSliseReducer";
 import { useEffect, useState } from "react";
@@ -19,12 +18,9 @@ const Cards = () => {
     const dispatch = useDispatch()
 
     const cardButtonOnClick = (title)=> {
-        // console.log(title)
         dispatch(addToMedicinesArray(title))
     }
-    return (
-   
-
+    return ( 
     <Row xs={1} md={2} lg={3} className="g-3">
       {cardsData.map((card, idx) => (
         <Col key={idx}>

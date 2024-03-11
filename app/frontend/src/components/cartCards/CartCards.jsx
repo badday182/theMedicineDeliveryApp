@@ -7,19 +7,27 @@ import {
   removeFromMedicinesArray,
   resetMedicinesArray,
 } from "../../redux/slices/cartSliseReducer";
-import cardsData from "../cardsData/cardsData";
+import { useEffect, useState } from "react";
 
 const CartCards = () => {
+  const [cardsData, setCardsData] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/cardsData")
+      .then((response) => response.json())
+      .then((data) => setCardsData(data))
+      .catch((error) => console.error("Error fetching cards data:", error));
+  }, []);
+
   const dispatch = useDispatch();
   const cartMedicinesArray = useSelector((state) => state.cart.medicinesArray);
 
-  // Фильтруем данные о карточках, оставляем только те, которые есть в корзине
+  // filtering Cards
   const cartCardsData = cardsData.filter((card) =>
     cartMedicinesArray.includes(card.title)
   );
 
   const cardButtonOnClick = (title) => {
-    // console.log(title)
     dispatch(removeFromMedicinesArray(title));
   };
 
