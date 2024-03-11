@@ -1,12 +1,3 @@
-
-
-const express = require('express')
-const PORT = process.env.PORT || 3001
-const app = express()
-app.listen(PORT, ()=>{
-    console.log(`Server is starting on port ${PORT}`)
-})
-
 const cardsData = [
     {
       title: 'Voltaren',
@@ -25,13 +16,4 @@ const cardsData = [
       imageUrl: 'https://www.kreo.com.ua/image/cache/catalog/bepanthen/bepanthen-duo-100g-polski%281%29-800x800.jpg',
     },
   ];
-
-app.get('/api/cardsData', (req, res) => {
-       res.json(cardsData);
-  });
-
-app.get('/api', (req,res) => {
-    res.json({
-        message: "Hello ))"
-    })
-})
+export default cardsData
