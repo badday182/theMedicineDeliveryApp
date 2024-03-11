@@ -13,13 +13,6 @@ import usersCardsData from "../cardsData/usersCardsData";
 const CartCards = () => {
   const [cardsData, setCardsData] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("/api/cardsData")
-  //     .then((response) => response.json())
-  //     .then((data) => setCardsData(data))
-  //     .catch((error) => console.error("Error fetching cards data:", error));
-  // }, []);
-
   useEffect(() => {
     fetch("/api/cardsData")
       .then((response) => {
