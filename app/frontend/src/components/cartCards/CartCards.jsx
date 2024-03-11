@@ -8,15 +8,32 @@ import {
   resetMedicinesArray,
 } from "../../redux/slices/cartSliseReducer";
 import { useEffect, useState } from "react";
+import usersCardsData from "../cardsData/usersCardsData";
 
 const CartCards = () => {
   const [cardsData, setCardsData] = useState([]);
 
+  // useEffect(() => {
+  //   fetch("/api/cardsData")
+  //     .then((response) => response.json())
+  //     .then((data) => setCardsData(data))
+  //     .catch((error) => console.error("Error fetching cards data:", error));
+  // }, []);
+
   useEffect(() => {
     fetch("/api/cardsData")
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Failed to fetch data from the server.');
+        }
+      })
       .then((data) => setCardsData(data))
-      .catch((error) => console.error("Error fetching cards data:", error));
+      .catch((error) => {
+        console.error("Error fetching cards data:", error);
+        setCardsData(usersCardsData); // Use usersCardsData if server fetch fails
+      });
   }, []);
 
   const dispatch = useDispatch();

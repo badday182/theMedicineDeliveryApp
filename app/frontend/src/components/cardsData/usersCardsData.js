@@ -1,4 +1,4 @@
-const cardsData = [
+const usersCardsData = [
     {
       title: 'Voltaren',
       imageUrl: 'https://cdn.shop-apotheke.com/images/D11/240/397/D11240397-p1.jpg',
@@ -16,4 +16,4 @@ const cardsData = [
       imageUrl: 'https://www.kreo.com.ua/image/cache/catalog/bepanthen/bepanthen-duo-100g-polski%281%29-800x800.jpg',
     },
   ];
-export default cardsData
+export default usersCardsData
